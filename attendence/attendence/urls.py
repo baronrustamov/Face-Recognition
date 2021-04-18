@@ -23,9 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('/', include('django.contrib.auth.urls')),
     # for login page
-    url(r'^login/$', auth_views.LoginView),
+    url(r'^login/$', auth_views.login),
+    #url(r'^login/$', auth_views.LoginView),
     # for logout
-    url(r'^logout/$', auth_views.LogoutView),
+    url(r'^logout/$', auth_views.logout),
+    #url(r'^logout/$', auth_views.LogoutView),
     # for register
     url(r'^register/$', views.register),
     path('faceRecognition/', include('faceRecognition.urls')),
