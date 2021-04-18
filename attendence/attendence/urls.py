@@ -21,7 +21,7 @@ from faceRecognition import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include('django.contrib.auth.urls'),
+    path('/', include('django.contrib.auth.urls')),
     # for login page
     url(r'^login/$', auth_views.LoginView),
     # for logout
