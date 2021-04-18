@@ -18,15 +18,19 @@ from django.urls import include, path
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from faceRecognition import views
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('/', include('django.contrib.auth.urls')),
     # for login page
-    url(r'^login/$', auth_views.login),
+    #url(r'^login/$', auth_views.login),
+    path('login/', LoginView.as_view(), name='login'),
     #url(r'^login/$', auth_views.LoginView),
     # for logout
-    url(r'^logout/$', auth_views.logout),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    #url(r'^logout/$', auth_views.logout),
     #url(r'^logout/$', auth_views.LogoutView),
     # for register
     url(r'^register/$', views.register),
